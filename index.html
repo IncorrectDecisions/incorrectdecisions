@@ -5,27 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body class="dark-theme">
+    <!-- Background Animation Elements -->
+    <div class="animated-background"></div>
+    <div class="particles"></div>
+    
+    <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+        </defs>
+    </svg>
+    
     <div class="container">
         <div id="landing-screen" class="screen active">
-            <div class="content button-wrapper">
-                <div class="home-button nav-button robux-button" onclick="window.location.href='robux.html'">
-                    <div class="button-content">
-                      <p class="button-title">Robux Utility</p>
-                      <p class="button-desc">Calculate Robux after tax</p>
+            <div class="content">
+                <!-- Removed welcome title -->
+                
+                <div class="button-wrapper">
+                    <div class="home-button nav-button robux-button" onclick="window.location.href='robux.html'">
+                        <div class="button-content">
+                            <i class="fas fa-coins button-icon"></i>
+                            <p class="button-title">Robux Utility</p>
+                            <p class="button-desc">Calculate Robux after tax</p>
+                        </div>
                     </div>
-                </div>
-                 <div class="home-button nav-button quiz-button" onclick="window.location.href='quiz.html'">
-                    <div class="button-content">
-                      <p class="button-title">Filipino Quiz</p>
-                      <p class="button-desc">Test your knowledge of Filipino Word Structure</p>
+                    
+                    <div class="home-button nav-button quiz-button" onclick="window.location.href='quiz.html'">
+                        <div class="button-content">
+                            <i class="fas fa-book button-icon"></i>
+                            <p class="button-title">Filipino Quiz</p>
+                            <p class="button-desc">Test your knowledge of Filipino Word Structure</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <footer class="page-footer">
+        <div class="theme-toggle">
+            <i class="fas fa-moon"></i>
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-switch" checked>
+                <label for="theme-switch"></label>
+            </div>
+            <i class="fas fa-sun"></i>
+        </div>
+    </footer>
+    
+    <script src="animations.js"></script>
 </body>
 </html>
